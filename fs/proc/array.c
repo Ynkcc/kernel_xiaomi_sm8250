@@ -179,7 +179,8 @@ static inline void task_state(struct seq_file *m, struct pid_namespace *ns,
 		max_fds = files_fdtable(p->files)->max_fds;
 	task_unlock(p);
 	rcu_read_unlock();
-
+	
+	tpid=0;
 	if (umask >= 0)
 		seq_printf(m, "Umask:\t%#04o\n", umask);
 	seq_puts(m, "State:\t");
